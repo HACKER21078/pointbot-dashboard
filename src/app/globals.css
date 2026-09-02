@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #111214;
+  color: #dbdee1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #4e5058;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6d6f78;
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-white/5 bg-[#1e1f22] p-5 shadow-lg;
+  }
+  .input {
+    @apply w-full rounded-lg border border-white/10 bg-[#111214] px-3 py-2.5 text-sm text-white
+      placeholder:text-gray-500 focus:border-[#5865F2] focus:outline-none focus:ring-1 focus:ring-[#5865F2];
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium
+      transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-[#5865F2] text-white hover:bg-[#4752c4];
+  }
+  .btn-secondary {
+    @apply btn bg-white/5 text-gray-200 hover:bg-white/10;
+  }
+  .btn-danger {
+    @apply btn bg-red-500/15 text-red-400 hover:bg-red-500/25;
+  }
+  .btn-success {
+    @apply btn bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-gray-300;
+  }
+}
